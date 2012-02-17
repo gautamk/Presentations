@@ -1,0 +1,380 @@
+<!doctype html>
+
+<!--
+    
+    So you'd like to know how to use impress.js?
+    
+    You've made the first, very important step -- you're reading the source code.
+    And that's how impress.js presentations are built -- with HTML and CSS code.
+    
+    Believe me, you need quite decent HTML and CSS skills to be able to use impress.js effectively.
+    And what is even more important, you need to be a designer, too, because there are no default
+    styles for impress.js presentations, there is no default or automatic layout for them.
+    
+    You need to design and build it by hand.
+    
+    So...
+    
+    Would you still like to know how to use impress.js?
+    
+-->
+
+<html lang="en">
+<head>
+    
+    <title>Getting into GIT</title>
+    
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+
+    <!--
+        
+        Impress.js doesn't depend on any external stylesheet. Script adds all styles it needs for
+        presentation to work.
+        
+        This style below contains styles only for demo presentation. Browse it to see how impress.js
+        classes are used to style presentation steps, or how to apply fallback styles, but I don't want
+        you to use them directly in your presentation.
+        
+        Be creative, build your own. We don't really want all impress.js presentations to look the same,
+        do we?
+        
+        When creating your own presentation get rid of this file. Start from scratch, it's fun!
+        
+    -->
+    <link href="css/git.css" rel="stylesheet" />
+    
+
+</head>
+<body>
+
+<!--
+    
+    That's the wrapper for your presentation steps. In this element all the impress.js magic happens.
+    It doesn't have to be a `<div>`. Only `id` is important here as that's how the script find it.
+    
+    It's worth to notice the `impress-not-supported` class. This class means, that browser doesn't
+    support features required by impress.js, so you can apply some fallback styles in your CSS.
+    It's not necessary to add it manually on this element. If the script detects that browser is not
+    good enough it will add this class, but keeping it in HTML means that users without JavaScript
+    will also get fallback styles.
+    
+    The class name on this element also depends on currently active presentation step. More details about
+    it can be found below, when `hint` element is being described.
+    
+-->
+<div id="impress" class="impress-not-supported">
+
+    <div class="fallback-message">
+        <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+        <p>For the best experience please use the latest <b>Chrome</b> or <b>Safari</b> browser. Firefox 10 (to be released soon) will also handle it.</p>
+    </div>
+
+    <div id="Title" class="step slide" data-x="0" data-y="0" data-z="" 
+        data-rotate-x=""  data-rotate-y="" data-rotate-z="" data-rotate="" 
+        data-scale="" >
+        <h1>Getting into GIT</h1>
+        <img style="max-height:300px;" src="images/setuptocat.jpg" alt="">
+        <h1>Gautam | [at]gautamNitish</h1>
+    </div>
+    <div id="about-me" class="step slide" data-x="1000" data-y="0" data-z="" 
+        data-rotate-x=""  data-rotate-y="" data-rotate-z="" data-rotate="" 
+        data-scale="" >
+        <h1>About Me</h1>
+        <ul>
+            <li>Final Year Computer Science Student</li>
+<!--             <li>Recently diagnosed as a <b>OCD</b> <small>(Obsessively Coding Developer)</small></li>
+            <li>Yes I do have a social life</li>
+ -->            <li>Spotted coding mostly with <b>Java</b> and <b>Python</b></li>
+        </ul>
+    </div>
+    <div id="scope" class="step " data-x="0" data-y="1000" data-z="" 
+        data-rotate-x=""  data-rotate-y="" data-rotate-z="" data-rotate="" 
+        data-scale="" >
+        <h1>Scope of the talk</h1>
+        <ul>
+            <li>History</li>
+            <li>What GIT is and is not.</li>
+            <li>Getting GIT</li>
+            <li>Why use it ?</li>
+            <li>Working with GIT and <br> how it works with you</li>
+            <li>Sales Talk</li>
+            <li>GitHub</li>
+        </ul>
+    </div>
+
+    <div id="history" class="step " data-x="1000" data-y="1000" data-z="" 
+        data-rotate-x=""  data-rotate-y="" data-rotate-z="" data-rotate="90" 
+        data-scale="" >
+        <h3>History</h3>
+        It was written by <b>Linus</b> because he wanted something like bitKeeper and not something like CVS.
+    </div>
+
+    <div id="what-it-is" class="step " data-x="1500" data-y="1000" data-z="" 
+        data-rotate-x="40"  data-rotate-y="40" data-rotate-z="" data-rotate="90" 
+        data-scale="" >
+        <h2>Its a DVCS</h2>
+        <p>with
+            <ul>
+                <li>Lightning Fast Speed</li>
+                and
+                <li>Corruption resistance</li>
+            </ul>
+        </p>
+    </div>
+    <div id="getting-git" class="step " data-x="1500" data-y="1500" data-z="" 
+        data-rotate-x="0"  data-rotate-y="50" data-rotate-z="" data-rotate="90" 
+        data-scale="" >
+        <h2>Getting Git</h2>
+        <ul>
+            <li>
+                Download it from  git-scm.com
+                <ul>
+                    <li>Extract , Compile & Install</li>
+                </ul>
+            </li>
+            <li><pre>sudo apt-get install git-core</pre></li>
+        </ul>
+    </div>
+    <div id="why-use-it" class="step " data-x="0" data-y="1700" data-z="" 
+        data-rotate-x=""  data-rotate-y="" data-rotate-z="" data-rotate="0" 
+        data-scale="" >
+        <h2>Why use it ?</h2>
+        <h4>Wait before I go on, lets look at why bother using a VCS ?</h4>
+    </div>
+    <div id="Undo-System" class="step " data-x="" data-y="1700" data-z="" 
+        data-rotate-x="-90"  data-rotate-y="" data-rotate-z="" data-rotate="" 
+        data-scale="" >
+        <img src="images/undo.jpg" alt="">
+    </div>
+    <div id="Synchronisation" class="step " data-x="" data-y="1700" data-z="" 
+        data-rotate-x="-90"  data-rotate-y="90" data-rotate-z="" data-rotate="" 
+        data-scale="" >
+        Synchronisation
+        <img src="images/sync.jpg" alt="">
+    </div>
+
+    <div id="tracking" class="step " data-x="" data-y="1500" data-z="" 
+        data-rotate-x="-90"  data-rotate-y="270" data-rotate-z="" data-rotate="" 
+        data-scale="" >
+        Tracking<br>
+        <img src="images/tracking.jpg" alt="">
+    </div>
+
+    <div id="blaming" class="step " data-x="" data-y="1500"  data-z="-500"
+        data-rotate-x="-90"  data-rotate-y="270" data-rotate-z="" data-rotate="" 
+        data-scale="" >
+        Blaming<br>
+        <img src="images/blame.jpg" alt="">
+    </div>
+
+     <div id="Branching" class="step " data-x="" data-y="1700" data-z="-500" 
+        data-rotate-x="-90"  data-rotate-y="90" data-rotate-z="" data-rotate="" 
+        data-scale="" >
+        Branching <br>
+        <img src="images/branching.png" alt="">
+    </div>
+
+    <div id="Now-why-use-it" class="step " data-x="5000" data-y="0" data-z="" 
+        data-rotate-x=""  data-rotate-y="" data-rotate-z="" data-rotate="" 
+        data-scale="5" >
+        So now why use git ?
+        <ul>
+            <li>Full copy of the Repository</li>
+            <li>Its Fast, really fast !!</li>
+            <li>
+                Cheap Local Branching
+                <img height="200" src="images/branches.png" alt="">
+            </li>
+            <li>Its Distributed</li>
+            <li>Its Easy to learn</li>
+        </ul>
+    </div>
+
+    <div id="Working-with-git" class="step " data-x="5000" data-y="4000" data-z="" 
+        data-rotate-x=""  data-rotate-y="" data-rotate-z="" data-rotate="" 
+        data-scale="5" >
+        Working with git
+        <ul style="font-size:30px;">
+            <li>
+                Create a repo
+                <pre>git init</pre>
+            </li>
+            <li>
+                Add files to the repo
+                <pre>git add .</pre>
+            </li>
+            <li>
+                Commit
+                <pre>git commit -m "Commit message"</pre>
+            </li>
+            <li>
+                Push
+                <pre>git push origin master</pre>
+            </li>
+        </ul>
+    </div>
+
+    <div id="how-git-works" class="step " data-x="5000" data-y="4000" data-z="" 
+        data-rotate-x="-90"  data-rotate-y="" data-rotate-z="" data-rotate="" 
+        data-scale="5" >
+        How git works with us
+        <img src="images/git-working.svg" alt="">
+    </div>
+
+    <div id="sales" class="step " data-x="1500" data-y="3000" data-z="" 
+        data-rotate-x=""  data-rotate-y="" data-rotate-z="" data-rotate="" 
+        data-scale="3" >
+        <h2>Sales Talk</h2>
+        Who is using git ?
+        <ul>
+            <li>Linux Kernel</li>
+            <li>Android</li>
+            <li>Eclipse</li>
+            <li>Ruby on Rails</li>
+        </ul>
+    </div>
+
+    <div id="Github" class="step " data-x="" data-y="3000" data-z="" 
+        data-rotate-x=""  data-rotate-y="" data-rotate-z="" data-rotate="" 
+        data-scale="" >
+        Github.com
+        <br>
+        <img height="400" src="images/bouncer.jpg" alt="">
+    </div>
+
+    <div id="recap-git" class="step " data-x="-2000" data-y="-1000" data-z="" 
+        data-rotate-x=""  data-rotate-y="" data-rotate-z="" data-rotate="" 
+        data-scale="" >
+        GIT <br>
+        <img src="images/setuptocat.jpg" height="600">
+    </div>
+    <div id="recap-coding" class="step " data-x="-2000" data-y="-300" data-z="" 
+        data-rotate-x=""  data-rotate-y="" data-rotate-z="" data-rotate="" 
+        data-scale="" >
+        Helps Coders <br>
+        <img src="images/codercat.jpg" height="600">
+    </div>
+    <div id="recap-repo" class="step " data-x="-2000" data-y="400" data-z="" 
+        data-rotate-x=""  data-rotate-y="" data-rotate-z="" data-rotate="" 
+        data-scale="" >
+        Repositories <br>
+        <img src="images/repo.jpg" height="600">
+    </div>
+    <div id="recap-powerful" class="step " data-x="-2800" data-y="400" data-z="" 
+        data-rotate-x=""  data-rotate-y="" data-rotate-z="" data-rotate="" 
+        data-scale="" >
+        Powerful <br>
+        <img src="images/xtocat.jpg" height="600">
+    </div>
+    <div id="recap-distributed" class="step " data-x="-2800" data-y="-300" data-z="" 
+        data-rotate-x=""  data-rotate-y="" data-rotate-z="" data-rotate="" 
+        data-scale="" >
+        Distributed <br>
+        <img src="images/socialite.jpg" height="600">
+    </div>
+    <div id="recap-collabarate" class="step " data-x="-2800" data-y="-1000" data-z="" 
+        data-rotate-x=""  data-rotate-y="" data-rotate-z="" data-rotate="" 
+        data-scale="" >
+        Collaborate <br>
+        <img src="images/benevocats.jpg" height="600">
+    </div>
+
+
+
+
+    <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
+    </div>
+
+</div>
+
+
+
+<!--
+    
+    Last, but not least.
+    
+    To make all described above really work, you need to include impress.js in the page.
+    I strongly encourage to minify it first.
+    
+    In here I just include full source of the script to make it more readable.
+    
+    You also need to call a `impress()` function to initialize impress.js presentation.
+    And you should do it in the end of your document. Not only because it's a good practice, but also
+    because I should be done when the whole document is ready.
+    Of course you can wrap it in any kind of "DOM ready" event, but I was to lazy to do so ;)
+    
+-->
+<script src="js/impress.js"></script>
+<script>impress();</script>
+
+<!--
+    
+    The `impress()` function also gives you access to API to control the presentation.
+    
+    Just store the result of the call:
+    
+        var api = impress();
+    
+    and you will get three functions you can call:
+    
+        `api.next()` - moves to next step of the presentation,
+        `api.prev()` - moves to previous step of the presentation
+        `api.goto( stepElement ) - moves the presentation to given step element (the DOM element of the step).
+    
+    You can also simply call `impress()` again to get the API, so `impress().next()` is also allowed.
+    Don't worry, it wont initialize the presentation again.
+    
+    For some example uses of this API check the last part of the source of impress.js where the API
+    is used in event handlers.
+    
+-->
+
+</body>
+</html>
+
+<!--
+    
+    Now you know more or less everything you need to build your first impress.js presentation, but before
+    you start...
+    
+    Oh, you've already cloned the code from GitHub?
+    
+    You have it open in text editor?
+    
+    Stop right there!
+    
+    That's not how you create awesome presentations. This is only a code. Implementation of the idea that
+    first needs to grow in your mind.
+    
+    So if you want to build great presentation take a pencil and piece of paper. And turn off the computer.
+    
+    Sketch, draw and write. Brainstorm your ideas on a paper. Try to build a mind-map of what you'd like
+    to present. It will get you closer and closer to the layout you'll build later with impress.js.
+    
+    Get back to the code only when you have your presentation ready on a paper. It doesn't make sense to do
+    it earlier, because you'll only waste your time fighting with positioning of useless points.
+    
+    If you think I'm crazy, please put your hands on a book called "Presentation Zen". It's all about 
+    creating awesome and engaging presentations.
+    
+    Think about it. 'Cause impress.js may not help you, if you have nothing interesting to say.
+    
+-->
+
+<!--
+    
+    Are you still reading this?
+    
+    For real?
+    
+    I'm impressed! Feel free to let me know that you got that far (I'm @bartaz on Twitter), 'cause I'd like
+    to congratulate you personally :)
+    
+    But you don't have to do it now. Take my advice and take some time off. Make yourself a cup of coffee, tea,
+    or anything you like to drink. And raise a glass for me ;)
+    
+    Cheers!
+    
+-->
+
