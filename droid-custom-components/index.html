@@ -26,7 +26,7 @@
       <div class="slides">
         <section data-markdown>
           # Droid Custom Components
-          ## Building your own looks for the robot
+          ## Moulding the Robot
           <img src="img/and-nand-not-or-droid.png" 
             style="
               max-height:150px;
@@ -79,6 +79,95 @@
           </section>
           <section data-markdown>
             ![avd screen shot](img/avd-ss.png)
+          </section>
+        </section>
+        <section>
+          <section data-markdown="">
+            # Curved Text
+            ![curved text screenshot](img/curved-text-ss.png)
+          </section>
+          <section>
+            <pre><code contenteditable>
+public class MainActivity extends Activity {
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        CurvedTextView ctv = (CurvedTextView) findViewById(R.id.curvedTextView1);
+        ctv.setText("sample text");
+    }
+}
+            </code></pre>
+          </section>
+          <section>
+            <pre><code contenteditable>
+&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot; 
+    android:id=&quot;@+id/parent&quot;&gt;
+
+    &lt;com.example.chumma.views.CurvedTextView
+        android:id=&quot;@+id/curvedTextView1&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_alignParentBottom=&quot;true&quot;
+        android:layout_alignParentLeft=&quot;true&quot;
+        android:layout_alignParentRight=&quot;true&quot;
+        android:layout_alignParentTop=&quot;true&quot;
+        android:text=&quot;CurvedTextView&quot; /&gt;
+
+&lt;/RelativeLayout&gt;
+            </code></pre>
+          </section>
+          <section>
+            <pre><code contenteditable="">
+public class CurvedTextView extends TextView {
+
+  Path path;
+  Paint paint;
+  public CurvedTextView(Context context, AttributeSet attrs) {
+    super(context, attrs);
+    path = new Path();
+    paint = new Paint();
+    paint.setColor(Color.BLACK);
+    paint.setTextSize(50);
+  }
+            </code></pre>
+          </section>
+          <section>
+            <pre><code contenteditable="">
+ @Override
+  protected void onMeasure(int widthSpec, int heightSpec) {
+    super.onMeasure(widthSpec, heightSpec);
+    
+    int w = MeasureSpec.getSize(widthSpec);
+    int h = MeasureSpec.getSize(heightSpec);
+    path.rewind();
+    path.addCircle(w/2, h/2, 50, Direction.CW);
+  }
+  @Override
+  protected void onDraw(Canvas canvas) {
+    canvas.drawTextOnPath(
+        getText().toString(), 
+        path, 
+        0, 0, 
+        paint);
+  }
+            </code></pre>
+          </section>
+          <section data-markdown="">
+            ![curved text ss2](img/curved-text-ss2.png)
+          </section>
+          <section>
+            <pre><code contenteditable="">
+    //path.addCircle(w/2, h/2, 50, Direction.CW);
+    path.moveTo(w/2, h/2);
+    path.lineTo((w/2)+200, h/2);
+    path.lineTo((w/2)+200, (h/2)+200);
+            </code></pre>
           </section>
         </section>
 
