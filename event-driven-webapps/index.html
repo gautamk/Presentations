@@ -35,6 +35,7 @@
             p.minitext{
                 font-size: 10px;
             }
+            
         </style>
 
         <!-- If the query includes 'print-pdf', use the PDF print sheet -->
@@ -176,6 +177,90 @@
                         <h1>WebSockets</h1>
                         <img src="img/websocketapi.png" alt="">
                     </section>
+                    <section>
+                        <h2>Advantages</h2>
+                        <ul>
+                            <li>Full-Duplex</li>
+                            <li>Bidirectional</li>
+                            <li>Single Socket</li>
+                            <li>Upgrades HTTP</li>
+                            <li>Native</li>
+                        </ul>
+                        <pre><code>
+GET /text HTTP/1.1 
+Upgrade: WebSocket 
+Connection: Upgrade 
+Host: www.websocket.org 
+… 
+HTTP/1.1 101 WebSocket Protocol Handshake 
+Upgrade: WebSocket 
+Connection: Upgrade 
+…
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Data Frames</h2>
+                        <p>Minimal Over Head once connection is established</p>
+                        <ul>
+                            <li>
+                                Text Frames
+                                <ul>
+                                    <li>Start with 0x00</li>
+                                    <li>End with 0xFF</li>
+                                </ul>
+                            </li>
+                            <li>
+                                Binary Frames
+                                <ul>
+                                    <li>Use Length Prefix</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>WebSocket Security</h2>
+                        <img src="img/security-guard.png" alt="">
+                        <img src="img/cablesws.jpg" alt="">
+                        <ul>
+                            <li>HTTP Compatible</li>
+                            <li>Same Encryption as HTTPS using TLS/SSL</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>WebSocket == TCP ! HTTP</h2>
+                        <p>
+                            The WebSocket protocol was designed as a transport layer for higher-level protocols (like TCP for the Web).
+                        </p>
+                        <p>
+                            Can transport other protocols like  XMPP, AMQP, Stomp etc  over the Web, using the standard ports 80/443.
+                        </p>
+                        <p>Support  for sub-protocol validation via headers</p>
+                    </section>
+                    <section>
+                        <h2>Performance</h2>
+                        <h3>Sample analysis from websocket.org</h3>
+                        <ul>
+                            <li>
+                                100,000 clients polling every 1 second
+                                <ul>
+                                    <li>Network throughput is (871 x 100,000)</li>
+                                    <li>87,100,000 bytes = 696,800,000 bits per second (665 Mbps)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>100,000 clients receive 1 message per second
+                                <ul>
+                                    <li>Network throughput is (2 x 100,000) </li>
+                                    <li>200,000 bytes = 1,600,000 bits per second (1.526 Mbps)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Comparison</h2>
+                        <img src="img/poll-ws-compare.gif" alt="">
+                    </section>
                 </section>
                 <section>
                     <section>
@@ -186,6 +271,50 @@
                     <section>
                         <h3>Support - Browsers</h3>
                         <img src="img/browsersupport.png" alt="">
+                    </section>
+                    <section>
+                        <h2>JavaScript</h2>
+                        <ul>
+                            <li>JS clients cannot receive raw binary data because there is no support for byte type</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Websocket Protocol Specs</h2>
+                        <p>The protocol spec is yet to be finalised so it keeps changing</p>
+                    </section>
+                    <section>
+                        <h2>Websocket Masking</h2>
+                        <p>The WebSocket protocol implements data masking. To prevent proxy cache poisoning</p>
+                        <p>The dark side of this is that Security Tools cannot identify it</p>
+                    </section>
+                    <section>
+                        <h2>DoS</h2>
+                        <ul>
+                            <li>WebSockets have higher connection Limit than HTTP</li>
+                            <li>Easy to Exploit this to create a DoS attack</li>
+                            <li>Eg Slowloris attack</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>WebSocket == TCP ! UDP</h2>
+                        <p>
+                            Bad Networks and Latency will cost you !
+                        </p>
+                        <p>
+                            Packets have to wait for Dropped Packets to Reach.
+                        </p>
+                        <p>
+                            At 1% packet loss about 3% of messages arrive late.</p>
+                        <p>
+                            So every subsequent packet is also delayed
+                        </p>
+                        <p>
+                            Refer
+                            <a class="minitext" href="http://blog.artillery.com/2012/06/websocket-performance.html">
+                                http://blog.artillery.com/2012/06/websocket-performance.html
+                            </a>
+                            For detailed analysis
+                        </p>
                     </section>
                 </section>
             </div>
