@@ -17,6 +17,7 @@
 
         <!-- For syntax highlighting -->
         <link rel="stylesheet" href="lib/css/zenburn.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
         <style type="text/css">
             body{
                 background-image: url("img/retina_wood.png");
@@ -30,6 +31,9 @@
             li.done{
                 opacity: 0.5;
                 text-decoration: line-through;
+            }
+            p.minitext{
+                font-size: 10px;
             }
         </style>
 
@@ -50,9 +54,6 @@
             <div class="slides">
                 <section class="jugc-logo">
                     <h1>Event Driven Webapps</h1>
-                    <h3>
-                        Asynchronous Service
-                    </h3>
                     <h4>
                         <a href="https://twitter.com/gautamNitish">@gautamNitish</a>,
                         <a href="http://gautamk.com">gautamk.com</a>
@@ -62,9 +63,9 @@
                 <section>
                     <h1>Agenda</h1>
                     <ul>
-                        <li>Restaurant Service 
+                        <li>Persistent Connections 
                         </li>
-                        <li>Persisting Connections 
+                        <li>Comet
                         </li>
                         <li>Websockets 
                         </li>
@@ -78,25 +79,113 @@
                         </li>
                     </ul>
                 </section>
+
                 <section>
                     <section>
-                        <h1>Restaurant Service</h1>
-                        <img src="img/StreetFood.png" alt="">
+                        <h1>Persistent Connection</h1>
+                        <h3>HTTP Keep Alive</h3>
+                        Single TCP connection Multiple HTTP Requests
+                    </section>
+                    <section>
+                        <h2>HTTP Paradigm</h2>
+                        <img src="img/HTTP.paradigm.png" alt="">
+                        <p class="minitext">courtesy http://en.wikipedia.org/w/index.php?title=File:HTTP_persistent_connection.svg</p>
                         <aside class="notes">
-                            Ya I know my Drawing skills rival Pablo Picasso
+                            Persistent in the sense that we can use multiple requests 
+                            but the server still can't push data.
                         </aside>
                     </section>
                     <section>
-                        <img src="img/FastFood.png" alt="">
-                        <aside class="notes">
-                            Ya I know my Drawing skills rival Pablo Picasso
-                        </aside>
+                        <h3>Newton's 3<sup><small>rd</small></sup> Law</h3>
+                        <img src="img/newton3rdlaw.jpg" alt="">
                     </section>
                     <section>
-                        <img src="img/FancyFood.png" alt="">
-                        <aside class="notes">
-                            Ya I know my Drawing skills rival Pablo Picasso
-                        </aside>
+                        <h3>Purpose of HTTP Keep alive</h3>
+                        <ul>
+                            <li>
+                                Reduce the overhead of the 3 way handshake
+                            </li>
+                        </ul>
+                        <img src="img/tcpopen3way.png" alt="">
+                        <p class="minitext">courtesy http://www.tcpipguide.com/free/t_TCPConnectionEstablishmentProcessTheThreeWayHandsh-3.htm</p>
+                    </section>
+                    <section>
+                        <h3>Server cannot push data</h3>
+                        <img src="img/push.jpg" alt="">
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Comet</h1>
+                        <img src="img/comet.gif" alt="">
+                    </section>
+                    <section>
+                        <h3>Its a Paradigm</h3>
+                        <ul>
+                            <li>Multiple HTTP connections</li>
+                            <li>
+                                Streaming
+                                <ul>
+                                    <li>Hidden Iframe</li>
+                                </ul>
+                                <ul>
+                                    <li>XHR</li>
+                                </ul>
+                            </li>
+                            <li>
+                                Polling
+                                <ul>
+                                    <li>Long Polling</li>
+                                    <li>Script Tag Long Polling</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Multiple HTTP Connections</h2>
+                        <p>
+                            The client opens an HTTP connection to the server, 
+                            the server opens a connection to the client. 
+                            Example: XMPP protocol.
+                        </p>
+                        <p>Good Luck with the server implementation !</p>
+                        <img src="img/goodluck.jpg" alt="">
+                    </section>
+                    <section>
+                        <h2>Hidden Iframe</h2>
+                        <img src="img/iframe.png" alt="">
+                        <p>Browser dependent Behaviour</p>
+                    </section>
+                    <section>
+                        <h2>Streaming XHR</h2>
+                        <img src="img/streaming-xhr.png" alt="">
+                    </section>
+                    <section>
+                        <h2>long polling</h2>
+                        <img src="img/longpolling.png" alt="">
+                    </section>
+                    <section>
+                        <h2>Script tag Long Polling</h2>
+                        <p>Same techniques as above, but the script code is embedded in &lt;script&gt; tags that can be
+                            filled with code from another second level domain.
+                        </p>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>WebSockets</h1>
+                        <img src="img/websocketapi.png" alt="">
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Gotchas</h1>
+                        <h3>Support - JVM Land Servers</h3>
+                        <img src="img/serversupport.png" alt="">
+                    </section>
+                    <section>
+                        <h3>Support - Browsers</h3>
+                        <img src="img/browsersupport.png" alt="">
                     </section>
                 </section>
             </div>
